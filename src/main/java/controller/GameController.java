@@ -1,6 +1,6 @@
 package controller;
 
-import model.Background;
+import service.BackgroundRenderer;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,24 +10,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameController extends JPanel implements ActionListener {
-    JFrame frame;
-    Timer timer;
-    Background background;
-    SkeletonController skeletonController;
+    private final BackgroundRenderer backgroundRenderer;
+    private final SkeletonController skeletonController;
 
     public GameController(JFrame frame) {
-        this.frame = frame;
-        this.timer = new Timer(50, this);
-        this.background = new Background(frame);
+        this.backgroundRenderer = new BackgroundRenderer(frame);
         this.skeletonController = new SkeletonController(frame);
 
-        frame.addKeyListener(skeletonController.getKeyListener());
-        timer.start();
+        frame.addKeyListener(skeletonController);
+        new Timer(50, this).start();
     }
 
     @Override
     public void paint(Graphics g) {
-        background.draw(g);
+        backgroundRenderer.draw(g);
         skeletonController.draw(g);
     }
 

@@ -1,16 +1,17 @@
 package model;
 
 public class Skeleton {
+    private static final int NUM_OF_POSES = 9;
+
     private int x, y;
-    private int loop;
     private Direction dir;
-    private final int numOfLoops;
     private final double speed;
+    private int poseIndex;
 
     public Skeleton() {
-        x = y = loop = 0;
+        x = y = 0;
+        poseIndex = 0;
         dir = Direction.DOWN;
-        numOfLoops = 9;
         speed = 0.0083;
     }
 
@@ -30,14 +31,6 @@ public class Skeleton {
         this.y = y;
     }
 
-    public int getLoop() {
-        return loop;
-    }
-
-    public void incrementLoop() {
-        loop = (++loop) % numOfLoops;
-    }
-
     public Direction getDir() {
         return dir;
     }
@@ -48,5 +41,13 @@ public class Skeleton {
 
     public double getSpeed() {
         return speed;
+    }
+
+    public int getPoseIndex() {
+        return poseIndex;
+    }
+
+    public void setNextPose() {
+        poseIndex = ++poseIndex % NUM_OF_POSES;
     }
 }

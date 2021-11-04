@@ -1,4 +1,4 @@
-package skeleton;
+package service.skeleton;
 
 import model.Direction;
 import model.Skeleton;

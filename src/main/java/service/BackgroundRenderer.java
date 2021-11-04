@@ -1,18 +1,16 @@
-package model;
-
-import utils.ImageUtils;
+package service;
 
 import javax.swing.JFrame;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public class Background {
+public class BackgroundRenderer {
     private final JFrame frame;
     private final Image img;
 
-    public Background(JFrame frame) {
+    public BackgroundRenderer(JFrame frame) {
         this.frame = frame;
-        this.img = ImageUtils.getImage("/assets/map.png");
+        this.img = ImageProvider.MAP.getImage();
     }
 
     public void draw(Graphics g) {

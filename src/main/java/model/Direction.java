@@ -7,13 +7,13 @@ public enum Direction {
     DOWN(2),
     RIGHT(3);
 
-    private final int num;
+    private final int index;
 
-    Direction(int num) {
-        this.num = num;
+    Direction(int index) {
+        this.index = index;
     }
 
-    public int getNum() {
-        return num;
+    public int getIndex() {
+        return index;
     }
 }

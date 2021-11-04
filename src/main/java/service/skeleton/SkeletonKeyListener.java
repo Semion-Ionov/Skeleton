@@ -1,4 +1,4 @@
-package skeleton;
+package service.skeleton;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
