@@ -2,11 +2,12 @@ package service.skeleton;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.HashSet;
+import java.util.Comparator;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SkeletonKeyListener extends KeyAdapter {
-    private final Set<Integer> pressedKeys = new HashSet<>();
+    private final Set<Integer> pressedKeys = new TreeSet<>(Comparator.reverseOrder());
 
     public Set<Integer> getPressedKeys() {
         return pressedKeys;
