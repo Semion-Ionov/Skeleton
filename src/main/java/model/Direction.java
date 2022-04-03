@@ -1,6 +1,10 @@
 package model;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
+@Getter
+@RequiredArgsConstructor
 public enum Direction {
     UP(0),
     LEFT(1),
@@ -8,12 +12,4 @@ public enum Direction {
     RIGHT(3);
 
     private final int index;
-
-    Direction(int index) {
-        this.index = index;
-    }
-
-    public int getIndex() {
-        return index;
-    }
 }

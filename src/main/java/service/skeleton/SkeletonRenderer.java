@@ -24,12 +24,12 @@ public class SkeletonRenderer {
     public void draw(Graphics g) {
         int skeletonSize = (int) (frame.getWidth() * SKELETON_SCALE);
 
-        int dx1 = skeleton.getX();
-        int dy1 = skeleton.getY();
+        int dx1 = skeleton.getPosition().x;
+        int dy1 = skeleton.getPosition().y;
         int dx2 = dx1 + skeletonSize;
         int dy2 = dy1 + skeletonSize;
 
-        int sx1 = skeleton.getPoseIndex() * PIXELS_PER_SPRITE;
+        int sx1 = skeleton.getSpriteIndex() * PIXELS_PER_SPRITE;
         int sy1 = skeleton.getDir().getIndex() * PIXELS_PER_SPRITE;
         int sx2 = sx1 + PIXELS_PER_SPRITE;
         int sy2 = sy1 + PIXELS_PER_SPRITE;
