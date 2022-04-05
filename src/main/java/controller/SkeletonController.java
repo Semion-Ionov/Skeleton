@@ -18,7 +18,7 @@ public class SkeletonController implements KeyListener {
     public SkeletonController(JFrame frame) {
         Skeleton skeleton = Skeleton.getInstance();
         this.keyListener = new SkeletonKeyListener();
-        this.actionPerformer = new SkeletonActionPerformer(skeleton, frame);
+        this.actionPerformer = new SkeletonActionPerformer(skeleton);
         this.renderer = new SkeletonRenderer(frame, skeleton);
     }
 

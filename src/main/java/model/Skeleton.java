@@ -5,30 +5,32 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.awt.Point;
+import utils.PositionUpdater;
 
 @Getter
 @Builder(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Skeleton {
-    private static final int NUM_OF_SPRITES = 9;
 
     @Setter
-    private Point position;
+    private Position pos;
     @Setter
     private Direction dir;
     private double speed;
     private int spriteIndex;
 
-    public void setNextSprite() {
-        spriteIndex = ++spriteIndex % NUM_OF_SPRITES;
+    public void incrementSprite() {
+        spriteIndex++;
+    }
+
+    public void updatePosition() {
+        PositionUpdater.update(pos, dir, speed);
     }
 
     public static Skeleton getInstance() {
         return Skeleton.builder()
                        .speed(0.0083)
-                       .position(new Point(0, 0))
+                       .pos(new Position(0.5, 0.5))
                        .dir(Direction.DOWN)
                        .spriteIndex(0)
                        .build();
